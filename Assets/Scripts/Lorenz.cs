@@ -9,8 +9,8 @@ public class Lorenz : MonoBehaviour
     float a = 10;
     float b = 28;
     float c = 8 / 3;
+    //Интервал между координатами точек
     float t = 0.01f;
-    int iterations = 100;
 
     // Start is called before the first frame update
     void Start()
