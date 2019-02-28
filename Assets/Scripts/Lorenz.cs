@@ -1,39 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Lorenz : MonoBehaviour
 {
-    Debug.Log("123");
+    float x = 0.1f;
+    float y = 0;
+    float z = 0;
+    float a = 10;
+    float b = 28;
+    float c = 8 / 3;
+    float t = 0.01f;
+    int iterations = 100;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("TATATA");
     }
 
     // Update is called once per frame
     void Update()
     {
-        double x = 0;
-        double y = 0;
-        double z = 0;
-        double a = 10;
-        double b = 28;
-        double c = 8 / 3;
-        //double t = 0.01;
-        int iterations = 100;
-
-        for (int i = 0; i < iterations; i++)
-        {
-            double xt = x + (a * (y - x));
-            double yt = y + (x * (b - z) - y);
-            double zt = z + (x * y - c * z);
-            x = xt;
-            y = yt;
-            z = zt;
-
-            var vect = new Vector3((float)x, (float)y, (float)z);
-            transform.position = vect;
-        }
+        float xt = x + t * (a * (y - x));
+        float yt = y + t * (x * (b - z) - y);
+        float zt = z + t * (x * y - c * z);
+        x = xt;
+        y = yt;
+        z = zt;
+        Debug.Log(x.ToString() + " ; " + y.ToString() + " ; " + z.ToString());
+        var vect = new Vector3(x, y, z);
+        transform.position = vect;
+        //for (int i = 0; i < iterations; i++)
+        //{
+        //}
     }
 }
