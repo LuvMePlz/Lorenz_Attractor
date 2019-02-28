@@ -15,7 +15,7 @@ public class Lorenz : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("TATATA");
+        Debug.Log("Starting script \"Lorenz\"");
     }
 
     // Update is called once per frame
@@ -30,8 +30,5 @@ public class Lorenz : MonoBehaviour
         Debug.Log(x.ToString() + " ; " + y.ToString() + " ; " + z.ToString());
         var vect = new Vector3(x, y, z);
         transform.position = vect;
-        //for (int i = 0; i < iterations; i++)
-        //{
-        //}
     }
 }
