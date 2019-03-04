@@ -11,6 +11,7 @@ public class Lorenz : MonoBehaviour
     float c = 8 / 3;
     //Интервал между координатами точек
     float t = 0.01f;
+    //float t = Time.deltaTime;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,11 @@ public class Lorenz : MonoBehaviour
         float xt = x + t * (a * (y - x));
         float yt = y + t * (x * (b - z) - y);
         float zt = z + t * (x * y - c * z);
+
+        //float xt = (z * y);
+        //float yt = (x - y);
+        //float zt = (1 - x * y);
+
         x = xt;
         y = yt;
         z = zt;
