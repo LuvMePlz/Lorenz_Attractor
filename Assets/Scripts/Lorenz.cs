@@ -10,14 +10,17 @@ public class Lorenz : MonoBehaviour
     float b = 28;
     float c = 8 / 3;
     //Интервал между координатами точек
-    float t = 0.01f;
+    float t = 0.005f;
     //float t = Time.deltaTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Starting script \"Lorenz\"");
+        //Debug.Log("Starting script \"Lorenz\"");
+        Application.targetFrameRate = 200;
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -26,14 +29,10 @@ public class Lorenz : MonoBehaviour
         float yt = y + t * (x * (b - z) - y);
         float zt = z + t * (x * y - c * z);
 
-        //float xt = (z * y);
-        //float yt = (x - y);
-        //float zt = (1 - x * y);
-
         x = xt;
         y = yt;
         z = zt;
-        Debug.Log(x.ToString() + " ; " + y.ToString() + " ; " + z.ToString());
+        //Debug.Log(x.ToString() + " ; " + y.ToString() + " ; " + z.ToString());
         var vect = new Vector3(x, y, z);
         transform.position = vect;
     }
